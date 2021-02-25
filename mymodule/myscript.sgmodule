@@ -19,4 +19,4 @@
 
 
 [MITM]
-hostname = %APPEND% *.caixin.com, *.wsj.com
+hostname = %APPEND% *.caixin.com
