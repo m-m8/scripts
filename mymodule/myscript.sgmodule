@@ -1,12 +1,8 @@
 #!name=我的补充脚本
-#!desc=该模块为脚本合集,用于补充nzw9314已整理的模块. 需要配置 CA 证书并启用 MitM 开关
+#!desc=该模块为脚本合集,用于补充nzw9314已整理的模块. 
 #!system=ios
 
 
-[Rule]
-
-# 普拉斯影业体验服-可直连观看(https://t.me/Plus_Movie_Best/214)
-DOMAIN,emby-best.xeton.dev,DIRECT
 
 [URL Rewrite]
 
@@ -15,21 +11,13 @@ DOMAIN,emby-best.xeton.dev,DIRECT
 ^https?://oia\.zhihu\.com https://zhuanlan.zhihu.com 302
 
 
-[Header Rewrite]
-
-
-# 百度盘
-# ^https:\/\/pan\.baidu\.com header-replace User-Agent "Mozilla/5.0 (Windows Phone 10)"
-
-^https:\/\/pan\.baidu\.com header-replace User-Agent "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
 
 
 [Script]
 
-# 签到获取cookie
 
 
-# 解锁
+
 
 # 财新解锁
 财新解锁.js = type=http-response,pattern=^https:\/\/mappsv5\.caixin\.com\/articlev.* ,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/vhvg/scripts/master/myscript/caixin.js
@@ -37,24 +25,5 @@ DOMAIN,emby-best.xeton.dev,DIRECT
 财新解锁.js = type=http-response,pattern=^https:\/\/course\.caixin\.com\/expert\.course\/course\/reserveapi.* ,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/vhvg/scripts/master/myscript/caixin.js
 财新解锁.js = type=http-response,pattern=^https:\/\/gateway\.caixin\.com\/api\/ucenter\/appapi\/v1\/userinfo ,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/vhvg/scripts/master/myscript/caixin.js
 
-# instapaper解锁Pro
-instapaper.js = type=http-response,pattern=^https://www.instapaper.com/api/subscription_status,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/vhvg/scripts/master/myscript/instapaper.js
 
-# Adguard Premium
-Adguard.js = type=http-response,pattern=^https:\/\/mobile-api\.adguard\.com\/api\/1\.0\/ios_validate_receipt,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Sunert/Script/Adguard.js
-
-# 三款PDF APP解锁Pro: PDF Expret点睛和PDF Viewer及(Adbole Acrobat reader未测试）
-pdf.js = type=http-response,pattern=^https://(api|license|createpdf).(revenuecat|pdfexpert|acrobat).com/(v1|api/1.0/pdfexpert6|createpdf/api/users/me)/subscri(bers/|(ption(s|/refresh))),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/vhvg/scripts/master/myscript/pdf.js
-
-# FaceApp unlock 
-FaceApp.js = type=http-response,pattern=^https?:\/\/api\.faceapp\.io(.*)\/api\/v.*\/auth\/user\/credentials,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/vhvg/scripts/master/myscript/FaceApp.js
-
-# Document
-documents.js = type=http-response,pattern=^https:\/\/license\.pdfexpert\.com\/api\/.*\/documents\/subscription\/(refresh$|check$),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Scripting/master/documents.js
-
-# 百度盘优化网页显示	
-百度盘网页优化显示.js = type=http-response,pattern=^https:\/\/pan\.baidu\.com,requires-body=1,script-path=https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/betterweb/baiduPan.js
-
-[MITM]
-hostname = %APPEND% *.caixin.com, www.instapaper.com, mobile-api.adguard.com, license.pdfexpert.com, api.revenuecat.com, createpdf.acrobat.com, api.faceapp.io, *api.smzdm.com, pan.baidu.com
-
+hostname = %APPEND% *.caixin.com
