@@ -14,7 +14,6 @@
 ^https://(.*)\.wsj\.com/amp/articles/ url response-body amp-access-(.*).js response-body ''
 
 
-[Header Rewrite]
 
 
 
@@ -34,4 +33,4 @@
 
 
 [MITM]
-hostname = %APPEND% *.caixin.com, *.wsj.com
+hostname = %APPEND% *.caixin.com,*.wsj.com
