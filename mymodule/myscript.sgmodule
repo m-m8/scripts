@@ -8,6 +8,10 @@
 ^https?://link\.zhihu\.com/\?target=https?%3A//(.*) https://$1 302
 ^https?://oia\.zhihu\.com https://zhuanlan.zhihu.com 302
 
+#wsj
+^https://(.*)\.wsj\.com/articles/ url 307 https://$1\.wsj\.com/amp/articles/
+^https://(.*)\.wsj\.com/amp/articles/ url response-body amp-access-(.*).js response-body ''
+
 
 [Header Rewrite]
 
@@ -29,4 +33,4 @@
 
 
 [MITM]
-hostname = %APPEND% *.caixin.com
+hostname = %APPEND% *.caixin.com, *.wsj.com
