@@ -7,22 +7,13 @@
 #去除知乎链接跳转
 ^https?://link\.zhihu\.com/\?target=https?%3A//(.*) https://$1 302
 ^https?://oia\.zhihu\.com https://zhuanlan.zhihu.com 302
-
 #wsj
 ^https://(.*)\.wsj\.com/articles/ url 307 https://$1\.wsj\.com/amp/articles/
-^https://(.*)\.wsj\.com/amp/articles/ url response-body amp-access-(.*).js response-body
-
-
-
-
+^https://(.*)\.wsj\.com/amp/articles/ url response-body amp-access-(.*).js response-body ''
 
 
 [Script]
 
-# 签到获取cookie
-
-
-# 解锁
 
 # 财新解锁
 财新解锁.js = type=http-response,pattern=^https:\/\/mappsv5\.caixin\.com\/articlev.* ,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/vhvg/scripts/master/myscript/caixin.js
@@ -32,4 +23,4 @@
 
 
 [MITM]
-hostname = %APPEND% *.caixin.com,*.wsj.com
+hostname = %APPEND% *.caixin.com, *.wsj.com
